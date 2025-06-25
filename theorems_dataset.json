@@ -1,0 +1,37 @@
+[
+  {
+    "premise": "∀x (P(x) → Q(x)) ∧ ∃x P(x)",
+    "conclusion": "∃x Q(x)",
+    "proof_sketch": "Modus ponens + existential instantiation",
+    "domain": "logic",
+    "difficulty": 2
+  },
+  {
+    "premise": "∀x (Mortal(x) ← Human(x)) ∧ Human(Socrates)",
+    "conclusion": "Mortal(Socrates)",
+    "proof_sketch": "Universal instantiation + modus ponens",
+    "domain": "logic",
+    "difficulty": 1
+  },
+  {
+    "premise": "∀x ∀y (R(x,y) → R(y,x)) ∧ ∀x R(x,x)",
+    "conclusion": "∀x ∀y (R(x,y) ↔ R(y,x))",
+    "proof_sketch": "Symmetry + reflexivity implies equivalence",
+    "domain": "relations",
+    "difficulty": 3
+  },
+  {
+    "premise": "∀x (Prime(x) ∧ x > 2 → Odd(x))",
+    "conclusion": "∀x (Prime(x) ∧ Even(x) → x = 2)",
+    "proof_sketch": "Contrapositive of primality condition",
+    "domain": "number_theory",
+    "difficulty": 3
+  },
+  {
+    "premise": "∀x ∀y (x < y → ∃z (x < z ∧ z < y))",
+    "conclusion": "¬∃x ∃y (x < y ∧ ∀z ¬(x < z ∧ z < y))",
+    "proof_sketch": "Dense ordering property",
+    "domain": "analysis",
+    "difficulty": 4
+  }
+]

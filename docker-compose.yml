@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  theorem-generator:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      - PYTHONPATH=/app/src
+      - CUDA_VISIBLE_DEVICES=0
+    command: python scripts/train_model.py

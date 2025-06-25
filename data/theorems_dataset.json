@@ -1,0 +1,36 @@
+
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2024-01-01",
+    "description": "Dataset de teoremas para entrenamiento",
+    "domains": ["logic", "algebra", "analysis", "number_theory"],
+    "total_theorems": 1000
+  },
+  "theorems": [
+    {
+      "id": "logic_001",
+      "premise": "∀x (P(x) → Q(x)) ∧ ∃x P(x)",
+      "conclusion": "∃x Q(x)",
+      "proof_sketch": "Existential instantiation followed by modus ponens",
+      "domain": "logic",
+      "difficulty": 2,
+      "formal_system": "FOL",
+      "keywords": ["modus_ponens", "existential", "quantifiers"],
+      "verified": true,
+      "source": "manual"
+    },
+    {
+      "id": "algebra_001", 
+      "premise": "∀x ∀y (x + y = y + x)",
+      "conclusion": "∀a ∀b ∀c ((a + b) + c = a + (b + c))",
+      "proof_sketch": "Commutativity and associativity of addition",
+      "domain": "algebra",
+      "difficulty": 1,
+      "formal_system": "PA",
+      "keywords": ["commutativity", "associativity", "addition"],
+      "verified": true,
+      "source": "standard_algebra"
+    }
+  ]
+}

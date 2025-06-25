@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-theorem-prover"
+version = "0.1.0"
+description = "Generador automático de teoremas usando ML"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Mauricio Gutierrez", email = "mauriciogut67@gmail.com"},
+]
+keywords = ["machine-learning", "mathematics", "theorem-proving", "ai"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+dependencies = [
+    "torch>=1.9.0",
+    "transformers>=4.20.0",
+    "datasets>=2.0.0",
+    "numpy>=1.21.0",
+    "sympy>=1.10.0",
+    "pandas>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.2.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+web = [
+    "flask>=2.0.0",
+    "fastapi>=0.75.0",
+    "uvicorn>=0.17.0",
+]
+notebooks = [
+    "jupyter>=1.0.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+]
+
+[project.scripts]
+theorem-generator = "src.theorem_generator:main"
+train-theorem-model = "scripts.train_model:main"
+
+[project.urls]
+Homepage = "https://github.com/MauricioGut/AI-Theorem-Prover"
+Documentation = "https://github.com/MauricioGut/AI-Theorem-Prover/blob/main/README.md"
+Repository = "https://github.com/MauricioGut/AI-Theorem-Prover"
+"Bug Tracker" = "https://github.com/MauricioGut/AI-Theorem-Prover/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.json", "*.txt", "*.md"]
