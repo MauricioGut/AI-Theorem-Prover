@@ -1,0 +1,58 @@
+AI-Theorem-Prover/
+├── README.md
+├── requirements.txt
+├── setup.py
+├── .gitignore
+├── LICENSE
+│
+├── src/
+│   ├── __init__.py
+│   ├── theorem_generator.py      # Código principal
+│   ├── logic_validator.py        # Validador lógico
+│   ├── dataset_manager.py        # Manejo de datasets
+│   └── utils/
+│       ├── __init__.py
+│       ├── logic_parser.py       # Parser de lógica formal
+│       └── proof_checker.py      # Verificador de pruebas
+│
+├── data/
+│   ├── theorems_dataset.json     # Dataset principal
+│   ├── mizar_theorems.json       # Teoremas de Mizar
+│   ├── coq_theorems.json         # Teoremas de Coq
+│   └── lean_theorems.json        # Teoremas de Lean
+│
+├── models/
+│   ├── base_model/               # Modelo base fine-tuned
+│   └── specialized_models/       # Modelos especializados
+│       ├── logic_model/
+│       ├── algebra_model/
+│       └── analysis_model/
+│
+├── notebooks/
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_model_training.ipynb
+│   ├── 03_theorem_generation.ipynb
+│   └── 04_evaluation_metrics.ipynb
+│
+├── scripts/
+│   ├── train_model.py            # Script de entrenamiento
+│   ├── generate_theorems.py      # Generación masiva
+│   ├── evaluate_model.py         # Evaluación
+│   └── data_preprocessing.py     # Preprocesamiento
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_generator.py
+│   ├── test_validator.py
+│   └── test_dataset.py
+│
+├── docs/
+│   ├── API.md
+│   ├── EXAMPLES.md
+│   ├── TRAINING_GUIDE.md
+│   └── MATHEMATICAL_NOTATION.md
+│
+└── web_interface/               # Interfaz web opcional
+    ├── app.py                   # Flask/FastAPI app
+    ├── templates/
+    └── static/

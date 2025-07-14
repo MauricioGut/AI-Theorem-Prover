@@ -15,7 +15,7 @@ sys.path.insert(0, str(src_path))
 
 # Ahora importar los módulos locales
 try:
-    from theorem_generator import TheoremGenerator
+    from src.theorem_generator import TheoremGenerator
 except ImportError as e:
     print(f"Error de importación: {e}")
     print(f"Asegúrate de que el archivo src/theorem_generator.py existe")

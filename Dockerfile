@@ -1,25 +1,23 @@
-FROM python:3.9-slim-bullseye
+FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
-# Instalar dependencias del sistema
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-    git \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copiar archivos
 COPY requirements.txt .
 COPY setup.py .
 COPY src/ ./src/
 COPY data/ ./data/
 
-# Instalar dependencias Python
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install -e .
+RUN pip install --no-cache-dir -e .
 
-# Exponer puerto para interfaz web
+RUN useradd -m appuser
+USER appuser
+
 EXPOSE 8000
 
-# Comando por defecto
 CMD ["python", "-m", "theorem_generator"]
